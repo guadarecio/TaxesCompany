@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
-import {Text, SafeAreaView, TextInput, StyleSheet, View} from 'react-native';
-import data from '../data/data.json';
+import {
+  Text,
+  SafeAreaView,
+  TextInput,
+  StyleSheet,
+  View,
+  Button,
+} from 'react-native';
 
-const AddSubmission = () => {
-  const form = data.inputFields;
-  console.log(form);
-
+const AddSubmission = ({navigation}) => {
   const [name, setName] = useState();
   const [surname, setSurname] = useState();
   const [age, setAge] = useState();
@@ -38,6 +41,10 @@ const AddSubmission = () => {
           value={age}
           placeholder="Your age"
           type="number"
+        />
+        <Button
+          onPress={() => navigation.navigate('SubmissionsList')}
+          title="Add"
         />
       </View>
     </SafeAreaView>
