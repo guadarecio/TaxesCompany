@@ -7,11 +7,21 @@ import {
   View,
   Button,
 } from 'react-native';
+import {useDispatch} from 'react-redux';
+import {add} from '../redux/action';
 
 const AddSubmission = ({navigation}) => {
+  const dispatch = useDispatch();
   const [name, setName] = useState();
   const [surname, setSurname] = useState();
   const [age, setAge] = useState();
+
+  const newSub = {
+    id: Date.now(),
+    Name: name,
+    Surname: surname,
+    Age: age,
+  };
 
   return (
     <SafeAreaView>
@@ -43,7 +53,10 @@ const AddSubmission = ({navigation}) => {
           type="number"
         />
         <Button
-          onPress={() => navigation.navigate('SubmissionsList')}
+          onPress={() => {
+            dispatch(add(newSub));
+            navigation.navigate('SubmissionsList');
+          }}
           title="Add"
         />
       </View>

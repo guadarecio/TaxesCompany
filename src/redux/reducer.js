@@ -22,7 +22,8 @@ const initialState = {
 export const reducerApp = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_SUBMISSION':
-      return [...state, action.payload];
+      const newSubmission = [...state.submissions, action.payload];
+      return {...state, submissions: newSubmission};
     default:
       return state;
   }
