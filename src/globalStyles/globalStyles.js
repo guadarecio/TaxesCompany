@@ -74,6 +74,10 @@ const globalStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  logo: {
+    alignItems: 'center',
+  },
 });
 
 export default globalStyles;
