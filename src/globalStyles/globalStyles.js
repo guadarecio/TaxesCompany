@@ -78,6 +78,18 @@ const globalStyles = StyleSheet.create({
   logo: {
     alignItems: 'center',
   },
+  buttonLogo: {
+    margin: 50,
+    paddingVertical: 5,
+    backgroundColor: '#f6a700',
+    borderRadius: 30,
+  },
+  textInputLogin: {
+    backgroundColor: '#7FFFD4',
+    padding: 20,
+    marginBottom: 30,
+    borderRadius: 30,
+  },
 });
 
 export default globalStyles;

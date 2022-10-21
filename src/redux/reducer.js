@@ -17,6 +17,7 @@ const initialState = {
   ],
 
   formFields: [data.inputFields],
+  token: null,
 };
 
 export const reducerApp = (state = initialState, action) => {
@@ -24,6 +25,10 @@ export const reducerApp = (state = initialState, action) => {
     case 'ADD_SUBMISSION':
       const newSubmission = [...state.submissions, action.payload];
       return {...state, submissions: newSubmission};
+    case 'ADD_TOKEN':
+      return {...state, token: action.payload};
+    case 'REMOVE_TOKEN':
+      return {...state, token: action.payload};
     default:
       return state;
   }

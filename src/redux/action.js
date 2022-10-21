@@ -5,4 +5,18 @@ const add = newSubmission => {
   };
 };
 
-export {add};
+const setToken = token => {
+  return {
+    type: 'ADD_TOKEN',
+    payload: token,
+  };
+};
+
+const removeToken = () => {
+  return {
+    type: 'REMOVE_TOKEN',
+    payload: null,
+  };
+};
+
+export {add, setToken, removeToken};

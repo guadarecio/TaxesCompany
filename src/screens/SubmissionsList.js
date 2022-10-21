@@ -1,10 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, Button, FlatList} from 'react-native';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import globalStyles from '../globalStyles/globalStyles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {removeToken} from '../redux/action';
 
 const SubmissionsList = ({navigation}) => {
   const data = useSelector(state => state.reducerApp);
+  const dispatch = useDispatch();
+
+  const logOut = async () => {
+    try {
+      await AsyncStorage.removeItem('@storage_Key');
+      dispatch(removeToken());
+    } catch (e) {
+      console.log('remove');
+    }
+    console.log('Done.');
+  };
 
   const renderItem = ({item}) => {
     return (
@@ -32,6 +45,9 @@ const SubmissionsList = ({navigation}) => {
         renderItem={renderItem}
         keyExtractor={item => item.id}
       />
+      <View style={{paddingVertical: 30}}>
+        <Button onPress={() => logOut()} title="Log out" color="#252850" />
+      </View>
       <View style={globalStyles.submissionsButton}>
         <Button
           onPress={() => navigation.navigate('AddSubmission')}
