@@ -58,7 +58,7 @@ const globalStyles = StyleSheet.create({
   itemText: {
     textAlign: 'center',
     marginBottom: 1,
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: 'bold',
     color: '#252850',
   },

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, SafeAreaView, TextInput, View, Button, Alert} from 'react-native';
+import {Text, SafeAreaView, TextInput, View, Button} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {add} from '../redux/action';
 import globalStyles from '../globalStyles/globalStyles';
@@ -10,18 +10,20 @@ const maxLengthSurname = 40;
 const AddSubmission = ({navigation}) => {
   const data = useSelector(state => state.reducerApp.formFields);
   const [inputFields, setInputFields] = useState();
+
   const dispatch = useDispatch('');
 
   const addHandler = () => {
     dispatch(add(inputFields));
+    navigation.navigate('SubmissionsList');
   };
 
   const changeHandler = (id, val) => {
-    const newInputFields = data.map(i => {
-      if (id === i.id) {
-        i['textVal'] = val;
+    const newInputFields = data.map(elem => {
+      if (id === elem.id) {
+        elem['textVal'] = val;
       }
-      return i;
+      return elem;
     });
 
     setInputFields(newInputFields);
