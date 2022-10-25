@@ -5,20 +5,25 @@
       "label": "Name",
       "placeholder": "Your first name",
       "type": "text",
-      "maxLength": 20
+      "maxLength": 20,
+      "textVal": ""
     },
+
     {
       "id": "surname",
       "label": "Surname",
       "placeholder": "Your last name",
       "type": "text",
-      "maxLength": 40
+      "maxLength": 40,
+      "textVal": ""
     },
+
     {
       "id": "age",
       "label": "Age",
       "placeholder": "Your age",
-      "type": "number"
+      "type": "number",
+      "textVal": ""
     }
   ]
 }
