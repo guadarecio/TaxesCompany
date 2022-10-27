@@ -5,17 +5,18 @@ import globalStyles from '../globalStyles/globalStyles';
 
 const SubmissionsList = ({navigation}) => {
   const data = useSelector(state => state.reducerApp.submissions);
-
+  console.log(data);
   const dispatch = useDispatch();
 
   const renderItem = ({item}) => {
     return (
       <View style={globalStyles.globalViewItem}>
         {item.map((ele, ind) => {
+          console.log(ele);
           return (
             <View key={ind} style={globalStyles.viewItem}>
               <Text style={globalStyles.itemText}>{ele.label}:</Text>
-              <Text> {ele.textVal}</Text>
+              <Text> {ele.value}</Text>
             </View>
           );
         })}

@@ -9,24 +9,20 @@ const maxLengthSurname = 40;
 
 const AddSubmission = ({navigation}) => {
   const data = useSelector(state => state.reducerApp.formFields);
-  const [inputFields, setInputFields] = useState();
 
+  const [inputFields, setInputFields] = useState([]);
   const dispatch = useDispatch('');
+
+  const changeHandler = (index, event) => {
+    const newData = data;
+    newData[index].value = event;
+
+    setInputFields(newData);
+  };
 
   const addHandler = () => {
     dispatch(add(inputFields));
     navigation.navigate('SubmissionsList');
-  };
-
-  const changeHandler = (id, val) => {
-    const newInputFields = data.map(elem => {
-      if (id === elem.id) {
-        elem['textVal'] = val;
-      }
-      return elem;
-    });
-
-    setInputFields(newInputFields);
   };
 
   return (
@@ -34,15 +30,17 @@ const AddSubmission = ({navigation}) => {
       <View style={globalStyles.container}>
         <Text style={globalStyles.title}>Add your Submission now!</Text>
         <View style={globalStyles.subContainer}>
-          {data.map((input, index) => (
-            <TextInput
-              key={index}
-              style={globalStyles.textInput}
-              onChangeText={val => changeHandler(input.id, val)}
-              value={inputFields}
-              placeholder={input.placeholder}
-            />
-          ))}
+          {data.map((input, index) => {
+            return (
+              <TextInput
+                key={index}
+                style={globalStyles.textInput}
+                onChangeText={val => changeHandler(index, val)}
+                value={inputFields}
+                placeholder={input.placeholder}
+              />
+            );
+          })}
 
           <View style={globalStyles.buttonContainer}>
             <View style={globalStyles.buttonSubcontainer}>
