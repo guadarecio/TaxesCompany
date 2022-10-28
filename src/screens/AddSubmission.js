@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {Text, SafeAreaView, TextInput, View, Button} from 'react-native';
+import {
+  Text,
+  SafeAreaView,
+  TextInput,
+  View,
+  Button,
+  ScrollView,
+} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {add} from '../redux/action';
 import globalStyles from '../globalStyles/globalStyles';
@@ -29,7 +36,9 @@ const AddSubmission = ({navigation}) => {
     <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
       <View style={globalStyles.container}>
         <Text style={globalStyles.title}>Add your Submission now!</Text>
-        <View style={globalStyles.subContainer}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={globalStyles.subContainer}>
           {data.map((input, index) => {
             return (
               <TextInput
@@ -38,23 +47,23 @@ const AddSubmission = ({navigation}) => {
                 onChangeText={val => changeHandler(index, val)}
                 value={inputFields}
                 placeholder={input.placeholder}
+                maxLength={input.maxLength}
               />
             );
           })}
-
-          <View style={globalStyles.buttonContainer}>
-            <View style={globalStyles.buttonSubcontainer}>
-              <Button
-                color="black"
-                onPress={() => {
-                  navigation.navigate('SubmissionsList');
-                }}
-                title={'Cancel'}
-              />
-            </View>
-            <View style={globalStyles.buttonSubcontainer}>
-              <Button color="black" onPress={addHandler} title={'Add'} />
-            </View>
+        </ScrollView>
+        <View style={globalStyles.buttonContainer}>
+          <View style={globalStyles.buttonSubcontainer}>
+            <Button
+              color="black"
+              onPress={() => {
+                navigation.navigate('SubmissionsList');
+              }}
+              title={'Cancel'}
+            />
+          </View>
+          <View style={globalStyles.buttonSubcontainer}>
+            <Button color="black" onPress={addHandler} title={'Add'} />
           </View>
         </View>
       </View>

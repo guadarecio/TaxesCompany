@@ -9,6 +9,7 @@ import Login from '../screens/Login';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {setToken} from '../redux/action';
 import {removeToken} from '../redux/action';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +19,12 @@ function StackNav() {
 
   const headerOptions = {
     headerRight: () => (
-      <Button onPress={() => logOut()} title="Log out" color="red" />
+      <Icon.Button
+        onPress={() => logOut()}
+        name="power-off"
+        color={'black'}
+        backgroundColor={'white'}
+      />
     ),
   };
 
