@@ -21,10 +21,9 @@ const AddSubmission = ({navigation}) => {
   const dispatch = useDispatch('');
 
   const changeHandler = (index, event) => {
-    const newData = data;
-    newData[index].value = event;
+    data[index].value = event;
 
-    setInputFields(newData);
+    setInputFields(data);
   };
 
   const addHandler = () => {

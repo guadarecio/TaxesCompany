@@ -42,6 +42,7 @@ const Login = () => {
             placeholder="Write your password"
             onChangeText={p => setPassword(p)}
             value={password}
+            secureTextEntry
           />
           <View style={globalStyles.buttonLogo}>
             <Button
