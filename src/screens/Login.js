@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, Button, Alert} from 'react-native';
-import {SvgXml} from 'react-native-svg';
+import {View, Text, TextInput, Button, Alert, Image} from 'react-native';
+
 import {useDispatch} from 'react-redux';
-import logo from '../assets/logo';
 import globalStyles from '../globalStyles/globalStyles';
 import {setToken} from '../redux/action';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -24,8 +23,17 @@ const Login = () => {
   return (
     <View style={{backgroundColor: 'white', flex: 1}}>
       <View style={globalStyles.container}>
-        <View style={globalStyles.logo}>
-          <SvgXml xml={logo} height="250" width="250" />
+        <View>
+          <Image
+            source={{
+              uri: 'https://www.enkel.ca/wp-content/uploads/2019/05/not-for-profit-tax-requirementsArtboard-1.png',
+            }}
+            resizeMode="contain"
+            style={{
+              width: '100%',
+              height: 250,
+            }}
+          />
         </View>
         <View style={globalStyles.subContainer}>
           <Text style={globalStyles.text}>Username</Text>
