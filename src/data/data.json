@@ -21,6 +21,14 @@
       "label": "Age",
       "placeholder": "Your age",
       "type": "number"
+    },
+
+    {
+      "id": "query",
+      "label": "Query",
+      "placeholder": "Your query",
+      "type": "text",
+      "maxLength": 100
     }
   ]
 }

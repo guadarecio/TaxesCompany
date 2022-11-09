@@ -23,7 +23,7 @@ const SubmissionsList = ({navigation}) => {
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <Text style={globalStyles.title}>Your Submissions List:</Text>
+      <Text style={globalStyles.title}>Query list:</Text>
       <FlatList
         data={data}
         renderItem={renderItem}
@@ -32,7 +32,7 @@ const SubmissionsList = ({navigation}) => {
 
       <View style={globalStyles.submissionsButton}>
         <Button
-          onPress={() => navigation.navigate('AddSubmission')}
+          onPress={() => navigation.navigate('AddQuery')}
           title="+"
           color="#252850"
         />

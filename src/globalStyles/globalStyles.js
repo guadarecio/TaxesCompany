@@ -14,6 +14,7 @@ const globalStyles = StyleSheet.create({
   },
   subContainer: {
     marginTop: 40,
+
     height: 300,
   },
   text: {

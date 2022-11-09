@@ -65,12 +65,12 @@ function StackNav() {
         ) : (
           <>
             <Stack.Screen
-              name="SubmissionsList"
+              name="QueryList"
               component={SubmissionsList}
               options={headerOptions}
             />
             <Stack.Screen
-              name="AddSubmission"
+              name="AddQuery"
               component={AddSubmission}
               options={headerOptions}
             />

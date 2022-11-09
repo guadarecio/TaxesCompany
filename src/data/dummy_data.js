@@ -6,7 +6,7 @@ export const DUMMY_DATA = [
       placeholder: 'Your first name',
       type: 'text',
       maxLength: 20,
-      value: 'Bruce',
+      value: 'John',
     },
     {
       id: 'surname',
@@ -14,7 +14,7 @@ export const DUMMY_DATA = [
       placeholder: 'Your last name',
       type: 'text',
       maxLength: 40,
-      value: 'Wayne',
+      value: 'Wick',
     },
     {
       id: 'age',
@@ -23,6 +23,14 @@ export const DUMMY_DATA = [
       type: 'number',
       value: '26',
     },
+    {
+      id: 'query',
+      label: 'Query',
+      placeholder: 'Your query',
+      type: 'text',
+      maxLength: 100,
+      value: 'How can I pay income tax?',
+    },
   ],
   [
     {
@@ -30,8 +38,8 @@ export const DUMMY_DATA = [
       label: 'Name',
       placeholder: 'Your first name',
       type: 'text',
-      maxLength: 20,
-      value: 'Clark',
+      maxLength: 40,
+      value: 'Scarlett',
     },
     {
       id: 'surname',
@@ -39,14 +47,22 @@ export const DUMMY_DATA = [
       placeholder: 'Your last name',
       type: 'text',
       maxLength: 40,
-      value: 'Kent',
+      value: 'Johansson',
     },
     {
       id: 'age',
       label: 'Age',
       placeholder: 'Your age',
       type: 'number',
-      value: '20',
+      value: '40',
+    },
+    {
+      id: 'query',
+      label: 'Query',
+      placeholder: 'Your query',
+      type: 'text',
+      maxLength: 100,
+      value: 'How do i manage my debts?',
     },
   ],
 ];

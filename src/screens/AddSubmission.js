@@ -28,26 +28,30 @@ const AddSubmission = ({navigation}) => {
 
   const addHandler = () => {
     dispatch(add(inputFields));
-    navigation.navigate('SubmissionsList');
+    navigation.navigate('QueryList');
   };
 
   return (
     <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
       <View style={globalStyles.container}>
-        <Text style={globalStyles.title}>Add your Submission now!</Text>
+        <Text style={globalStyles.title}>Add your Query here!</Text>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={globalStyles.subContainer}>
           {data.map((input, index) => {
             return (
-              <TextInput
-                key={index}
-                style={globalStyles.textInput}
-                onChangeText={val => changeHandler(index, val)}
-                value={inputFields}
-                placeholder={input.placeholder}
-                maxLength={input.maxLength}
-              />
+              <>
+                <Text style={globalStyles.text}>{input.label}</Text>
+
+                <TextInput
+                  key={index}
+                  style={globalStyles.textInput}
+                  onChangeText={val => changeHandler(index, val)}
+                  value={inputFields}
+                  placeholder={input.placeholder}
+                  maxLength={input.maxLength}
+                />
+              </>
             );
           })}
         </ScrollView>
